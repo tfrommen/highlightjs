@@ -1,0 +1,32 @@
+{
+  "name": "tfrommen/highlightjs",
+  "description": "A simple highlight.js-based syntax highlighter plugin for WordPress.",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "code",
+    "highlight",
+    "highlightjs",
+    "syntax"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Thorsten Frommen",
+      "email": "info@tfrommen.de",
+      "homepage": "https://twitter.com/thorstenfrommen",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/tfrommen/highlightjs/issues",
+    "source": "https://github.com/tfrommen/highlightjs"
+  },
+  "require": {
+    "php": ">=5.4"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
