@@ -22,10 +22,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - 
 
-## [1.0.0] - 2017-07-16
+## [1.1.0] - 2017-07-25
+
+### Added
+
+- Add filter, `tfrommen\HighlightJs\FILTER_SHOULD_LOAD`, for the condition for the plugin to load.
+
+## 1.0.0 - 2017-07-16
 
 Initial release.
 
 ----
 
-[Unreleased]: https://github.com/tfrommen/highlightjs/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/tfrommen/highlightjs/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/tfrommen/highlightjs/compare/v1.0.0...v1.1.0

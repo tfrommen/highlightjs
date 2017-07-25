@@ -30,6 +30,29 @@ This plugin **requires PHP 5.4** or higher, but you really **should be using PHP
 
 Please refer to the [highlight.js documentation](https://highlightjs.org/).
 
+### Filters
+
+In order to customize certain aspects of the plugin, it provides you with several filters.
+For each of these, a short description as well as a code example on how to alter the default behavior is given below.
+Just put the according code snippet in your theme's `functions.php` file or your _customization_ plugin, or to some other appropriate place.
+
+#### `\tfrommen\HighlightJs\FILTER_SHOULD_LOAD` (`highlightjs.should_load`)
+
+This filter lets you customize the condition for the plugin to load.
+The default value is the result of `is_singular( 'post' )`, meaning the plugin only loads for single posts.
+
+**Usage Example:**
+
+```php
+<?php
+/**
+ * Filters the condition for the plugin to load.
+ *
+ * @param bool $should_load Whether or not the plugin should load.
+ */
+add_filter( \tfrommen\HighlightJs\FILTER_SHOULD_LOAD, '__return_true' );
+```
+
 ## License
 
 Copyright (c) 2017 Thorsten Frommen

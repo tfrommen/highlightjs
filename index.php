@@ -5,7 +5,7 @@
  * Description: A simple highlight.js-based syntax highlighter plugin for WordPress.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     1.0.0
+ * Version:     1.1.0
  * License:     MIT
  */
 
@@ -13,7 +13,14 @@ namespace tfrommen\HighlightJs;
 
 defined( 'ABSPATH' ) or die();
 
-add_action( 'plugins_loaded', __NAMESPACE__ . '\\bootstrap' );
+/**
+ * Filter name.
+ *
+ * @since 1.1.0
+ *
+ * @var string
+ */
+const FILTER_SHOULD_LOAD = 'highlightjs.should_load';
 
 /**
  * Bootstraps the plugin.
@@ -27,7 +34,15 @@ function bootstrap() {
 
 	add_action( 'wp_footer', function () {
 
-		if ( ! is_singular( 'post' ) ) {
+		/**
+		 * Filters the condition for the plugin to load.
+		 *
+		 * @since 1.1.0
+		 *
+		 * @param bool $should_load Whether or not the plugin should load.
+		 */
+		$should_load = (bool) apply_filters( FILTER_SHOULD_LOAD, is_singular( 'post' ) );
+		if ( ! $should_load ) {
 			return;
 		}
 
@@ -58,3 +73,5 @@ function bootstrap() {
 		);
 	} );
 }
+
+add_action( 'plugins_loaded', __NAMESPACE__ . '\\bootstrap' );
