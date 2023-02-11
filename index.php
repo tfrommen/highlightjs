@@ -1,11 +1,11 @@
-<?php # -*- coding: utf-8 -*-
+<?php declare( strict_types=1 );
 /*
- * Plugin Name: highlight.js Syntax Highlighter
+ * Plugin Name: Highlight.js Syntax Highlighter
  * Plugin URI:  https://github.com/tfrommen/highlightjs/
- * Description: A simple highlight.js-based syntax highlighter plugin for WordPress.
+ * Description: A simple Highlight.js-based syntax highlighter plugin for WordPress.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     1.1.0
+ * Version:     2.0.0
  * License:     MIT
  */
 
@@ -30,9 +30,9 @@ const FILTER_SHOULD_LOAD = 'highlightjs.should_load';
  *
  * @return void
  */
-function bootstrap() {
+function bootstrap(): void {
 
-	add_action( 'wp_footer', function () {
+	add_action( 'wp_footer', function (): void {
 
 		/**
 		 * Filters the condition for the plugin to load.
@@ -41,7 +41,7 @@ function bootstrap() {
 		 *
 		 * @param bool $should_load Whether or not the plugin should load.
 		 */
-		$should_load = (bool) apply_filters( FILTER_SHOULD_LOAD, is_singular( 'post' ) );
+		$should_load = apply_filters( FILTER_SHOULD_LOAD, is_singular( 'post' ) && has_block( 'code' ) );
 		if ( ! $should_load ) {
 			return;
 		}
@@ -66,10 +66,6 @@ function bootstrap() {
 			[],
 			filemtime( plugin_dir_path( __FILE__ ) . $path ),
 			'screen'
-		);
-		wp_add_inline_style(
-			'highlightjs',
-			'pre>code{margin:-1.6em;padding:1.6em !important}'
 		);
 	} );
 }
