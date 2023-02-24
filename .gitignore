@@ -1,28 +1,13 @@
-# Backups
-*~
-*.DS_Store
-*.out
-*.so
-*.swp
-
-# Logs
-logs
+.env
 *.log
 
-# Composer
-composer.lock
-vendor
+# Exclude external libraries and builds.
+/vendor/
+/composer.lock
 
-# Node
-.npm
-node_modules
-npm-debug.log*
-
-# PhpStorm
-.idea
-
-# PHPUnit
-phpunit.xml
+# Exclude local files and folders.
+/phpcs.xml
+/phpunit.xml
 
 
 # Git
