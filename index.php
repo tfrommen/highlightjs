@@ -5,7 +5,7 @@
  * Description: A simple Highlight.js-based syntax highlighter plugin for WordPress.
  * Author:      Thorsten Frommen
  * Author URI:  https://tfrommen.de
- * Version:     2.0.0
+ * Version:     2.1.0
  * License:     MIT
  */
 
@@ -56,7 +56,7 @@ function bootstrap(): void {
 		);
 		wp_add_inline_script(
 			'highlightjs',
-			'hljs.initHighlightingOnLoad();'
+			'hljs.highlightAll();'
 		);
 
 		$path = 'assets/css/theme.min.css';

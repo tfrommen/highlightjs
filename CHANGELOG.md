@@ -22,6 +22,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - 
 
+## [2.1.0](https://github.com/tfrommen/highlightjs/compare/v2.0.0...v2.1.0) - 2023-03-16
+
+### Changed
+
+- Replace deprecated `initHighlightingOnLoad` function call with `highlightAll`.
+
 ## [2.0.0](https://github.com/tfrommen/highlightjs/compare/v1.1.0...v2.0.0) - 2023-02-12
 
 ### Changed
